@@ -13,7 +13,7 @@ public abstract class Bag {
      *       - an int named capacity
      *       - an array of Strings named contents
      */
-    private String color = null;
+    private String color;
     private int numberOfContents;
     private int capacity;
     private String[] contents;
@@ -30,7 +30,7 @@ public abstract class Bag {
      * be empty (e.g. numberOfContents is 0 and an empty String array for
      * its contents.)
      */
-    public Bag(String bagColor. int bagCapacity) {
+    public Bag(String bagColor, int bagCapacity) {
         this.numberOfContents= 0;
         this.color = bagColor;
         this.contents = new String[0];
@@ -92,9 +92,8 @@ public abstract class Bag {
            this.contents = newContent;
            this.numberOfContents = this.numberOfContents + 1;
            return True;
-        } else {
-            return False;
-        }
+        } 
+        return False;
     }
 
 
@@ -136,7 +135,6 @@ public abstract class Bag {
     public void increaseCapacity(int n) {
         // TODO: Implement this method.
         this.capacity = this.capacity + n;
-
     }
 
     /**
