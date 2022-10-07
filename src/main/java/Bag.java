@@ -31,10 +31,10 @@ public abstract class Bag {
      * its contents.)
      */
     public Bag(String bagColor, int bagCapacity) {
-        this.numberOfContents= 0;
         this.color = bagColor;
-        this.contents = new String[0];
+        this.numberOfContents = 0;
         this.capacity = bagCapacity;
+        this.contents = new String[0];
     }
 
 
@@ -51,7 +51,7 @@ public abstract class Bag {
         return this.capacity;
     }
     
-    public int getColor() {
+    public String getColor() {
         return this.color;
     }
     
@@ -66,7 +66,7 @@ public abstract class Bag {
      * TODO: Create a setter function called setColor which sets the
      *       color of this bag to the given color.
      */
-    public void setColor (String givenColor) {
+    public void setColor(String givenColor) {
         this.color = givenColor;
     }
 
@@ -84,16 +84,16 @@ public abstract class Bag {
      *       This method should return true if the item was added
      *       and false otherwise.
      */
-    public boolean addItem (String itemBag) {
+    public boolean addItem(String itemBag) {
         if (this.numberOfContents < this.capacity) {
-           String[] newContent = new String[this.contents.length + 1];
-           System.arraycopy(this.contents, 0, newContent, 0, this.contents.length);
-           newContent[this.contents.length] = itemBag;
-           this.contents = newContent;
-           this.numberOfContents = this.numberOfContents + 1;
-           return True;
-        } 
-        return False;
+            String[] newContent = new String[this.contents.length + 1];
+            System.arraycopy(this.contents, 0, newContent, 0, this.contents.length);
+            newContent[this.contents.length] = itemBag;
+            this.contents = newContent;
+            this.numberOfContents = this.numberOfContents + 1;
+            return true;
+        }
+        return false;
     }
 
 
@@ -110,16 +110,16 @@ public abstract class Bag {
      *
      * @return
      */
-    public String popItem (){
+    public String popItem() {
         if (this.contents.length == 0) {
             return null;
         } else {
-            String removedItem = this.contents[this.contents.length - 1];
+            String item = this.contents[this.contents.length - 1];
             String[] newContent = new String[this.contents.length - 1];
-            System.arraycopy(this.contents, 0, newContents, 0, this.contents.length - 1);
+            System.arraycopy(this.contents, 0, newContent, 0, this.contents.length - 1);
             this.contents = newContent;
             this.numberOfContents = this.numberOfContents - 1;
-            return removedItem;
+            return item;
         }
     }
 
